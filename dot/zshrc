@@ -1,0 +1,43 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zsh.d/.histfile
+HISTSIZE=100000
+SAVEHIST=1000000
+bindkey -e
+export PATH=$PATH:/opt/vagrant/bin
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/tomo/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+
+#Prompt 
+autoload colors
+colors
+
+hcolor="red"
+case `hostname -s` in 
+  "agedpale"	) hcolor="cyan" ;;
+  "anis"        ) hcolor="green" ;;
+  "artemisia"   ) hcolor="green";;
+  "azurecube"   ) hcolor="cyan" ;;
+  "bitters"     ) hcolor="magenta" ;;
+  "brownwater"	) hcolor="red" ;;
+  "grayfog"     ) hcolor="white" ;;
+  "jaune"       ) hcolor="yellow" ;;
+  "lunar"       ) hcolor="blue" ;;
+  "nutcase"     ) hcolor="magenta" ;;
+  "redhelm"     ) hcolor="green" ;;
+  *		) hcolor="white" ;;
+esac
+
+
+PROMPT="%n@%{${fg[$hcolor]}%}%m%{${reset_color}%} %{${fg[brown]}%}%~%{${reset_color}%}
+%# "
+#RPROMPT="%{${fg[brown]}%}%~%{${reset_color}%}"
+
+# Setup additional settings
+for i in `find ~/.zsh.d -type f | grep -E "sh$" | sort`;do source $i;done
+
+export GTAGSLABEL=exuberant-ctags

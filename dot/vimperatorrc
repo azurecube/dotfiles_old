@@ -1,0 +1,22 @@
+:set hintchars="abcdefghijklmnopqrstuvwxyz"
+set complete=tsl
+set gui=none
+noremap  <C-i> <Tab>
+nnoremap <C-i> <Tab>
+vnoremap <C-i> <Tab>
+inoremap <C-i> <Tab>
+cnoremap <C-i> <Tab>
+
+noremap  <S-C-i> <S-Tab>
+nnoremap <S-C-i> <S-Tab>
+vnoremap <S-C-i> <S-Tab>
+inoremap <S-C-i> <S-Tab>
+cnoremap <S-C-i> <S-Tab>
+
+noremap  <C-c> <ESC>
+nnoremap <C-c> <ESC>
+vnoremap <C-c> <ESC>
+inoremap <C-c> <ESC>
+cnoremap <C-c> <ESC>
+
+source! /home/tomo/.vimperatorrc.local
