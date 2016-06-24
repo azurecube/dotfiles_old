@@ -1,0 +1,13 @@
+[user]
+	name = azurecube
+	email = bw@azurecube.org
+[color]
+	ui = true
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+
