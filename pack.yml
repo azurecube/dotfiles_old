@@ -1,0 +1,13 @@
+- hosts: localhost
+  user: root
+  tasks:
+   - name: git 
+     package: name=git state=latest
+   - name: vim
+     package: name=vim-gnome state=latest
+   - name: ricty deminish
+     package: name=fonts-ricty-diminished state=latest     
+   - name: tmux
+     package: name=tmux state=latest
+   - name: tmuxinator
+     package: name=tmuxinator state=latest
