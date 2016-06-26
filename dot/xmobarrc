@@ -1,4 +1,4 @@
-Config { font = "xft:TakaoGothic-9:bold"
+Config { font = "Ricty Diminished:style=Bold"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 100
