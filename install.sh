@@ -1,5 +1,6 @@
 #! /bin/bash
 
+sudo apt-get -y install git
 git clone https://github.com/azurecube/dotfiles.git
 
 # link and setup when clone succeeded
