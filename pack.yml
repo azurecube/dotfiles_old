@@ -11,3 +11,14 @@
      package: name=tmux state=latest
    - name: tmuxinator
      package: name=tmuxinator state=latest
+   - name: urxvt
+     package: name=rxvt-unicode-256color state=latest
+   - name: xmonad
+     package: name=xmonad state=latest
+   - name: xmobar
+     package: name=xmobar state=latest
+   - name: dmenu
+     package: name=dmenu state=latest
+   - name: zsh
+     package: name=zsh state=latest
+
