@@ -34,7 +34,7 @@ myManageHookShift = composeAll
   [ className =? "Firefox" --> viewShift "1"
 	, className =? "Emacs" --> viewShift "2"
 	, className =? "Gnome-terminal" --> viewShift "3"
-  , className =? "Amarok" --> viewShift "4"
+  , className =? "KeePass2" --> viewShift "4"
   , className =? "com-sun-javaws-Main" --> viewShift "5"
   , className =? "VirtualBox" --> viewShift "6"
 	]
@@ -69,6 +69,7 @@ applyOperation =
 	, ((modm, xK_f), runOrRaise "firefox" (className =? "Firefox"))
         , ((modm, xK_x), runOrRaise "/home/tomo/bin/toggle_xmobar.sh" (className =? "xmobar"))
         , ((modm, xK_v), runOrRaise "evince" (className =? "Evince"))
+        , ((modm, xK_k), runOrRaise "keepass2" (className =? "KeePass2"))
       	]
 
 main = do
