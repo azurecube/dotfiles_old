@@ -33,7 +33,7 @@ modm = mod4Mask
 myManageHookShift = composeAll
   [ className =? "Firefox" --> viewShift "1"
 	, className =? "Emacs" --> viewShift "2"
-	, className =? "Gnome-terminal" --> viewShift "3"
+	, className =? "URxvt" --> viewShift "3"
   , className =? "KeePass2" --> viewShift "4"
   , className =? "com-sun-javaws-Main" --> viewShift "5"
   , className =? "VirtualBox" --> viewShift "6"
@@ -65,7 +65,7 @@ screenOperation =
 
 applyOperation =
 	[ ((modm, xK_e), runOrRaise "/usr/local/bin/emacs" (className =? "Emacs"))
-	, ((modm, xK_t), runOrRaise "gnome-terminal" (className =? "Gnome-terminal"))
+	, ((modm, xK_t), runOrRaise "urxvt" (className =? "URxvt"))
 	, ((modm, xK_f), runOrRaise "firefox" (className =? "Firefox"))
         , ((modm, xK_x), runOrRaise "/home/tomo/bin/toggle_xmobar.sh" (className =? "xmobar"))
         , ((modm, xK_v), runOrRaise "evince" (className =? "Evince"))
@@ -82,7 +82,7 @@ main = do
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "cyan" "" . shorten 50
                         }
-        , terminal           = "gnome-terminal"
+        , terminal           = "urxvt"
         , borderWidth        = 2
         , normalBorderColor  = "#333333"
         , focusedBorderColor = "#6666ff"
