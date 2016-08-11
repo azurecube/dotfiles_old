@@ -38,6 +38,6 @@ PROMPT="%n@%{${fg[$hcolor]}%}%m%{${reset_color}%} %{${fg[brown]}%}%~%{${reset_co
 #RPROMPT="%{${fg[brown]}%}%~%{${reset_color}%}"
 
 # Setup additional settings
-for i in `find ~/.zsh.d -type f | grep -E "sh$" | sort`;do source $i;done
+for i in `find ~/.zsh.d/ -type f | grep -E "sh$" | sort`;do source $i;done
 
 export GTAGSLABEL=exuberant-ctags

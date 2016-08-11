@@ -1,4 +1,5 @@
 #Directory
-PATH=$PATH:~/bin
-CDPATH=.:~/
-DIRSTACK=50
+export CDPATH=.:~/
+export DIRSTACK=50
+export GOPATH=~/
+export PATH=$PATH:$GOPATH:~/bin
