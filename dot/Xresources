@@ -32,3 +32,6 @@ URxvt*font: xft:Ricty Diminished-Regular:size=12.5:antialias=true
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
+! Color
+URxvt*background: Black
+URxvt*foreground: White
