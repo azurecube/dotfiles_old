@@ -50,4 +50,5 @@
      shell: |
              update-alternatives --config editor <<EOF | grep nvim | tail -1 | awk '{print $1}' | update-alternatives --config editor
              EOF
-
+   - package: name=uim state=latest
+   - package: name=uim-skk state=latest
