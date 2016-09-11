@@ -7,3 +7,10 @@ for i in $(ls $DOT_ROOT/dot);do
   if [ -e $dest ]; then continue; fi
   ln -s  $source $dest && echo link $dest is created
 done
+
+for i in $(ls $DOT_ROOT/dot/config);do
+  source=$DOT_ROOT/dot/config/$i
+  dest=~/'.config'/$i
+  if [ -e $dest ]; then continue; fi
+  ln -s  $source $dest && echo link $dest is created
+done
