@@ -1,33 +1,29 @@
 - hosts: localhost
   user: root
   tasks:
-   - name: git 
-     package: name=git state=latest
-   - name: ricty deminish
-     package: name=fonts-ricty-diminished state=latest     
-   - name: tmux
-     package: name=tmux state=latest
-   - name: tmuxinator
-     package: name=tmuxinator state=latest
-   - name: urxvt
-     package: name=rxvt-unicode-256color state=latest
-   - name: xmonad
-     package: name=xmonad state=latest
-   - name: xmobar
-     package: name=xmobar state=latest
-   - name: dmenu
-     package: name=dmenu state=latest
-   - name: zsh
-     package: name=zsh state=latest
-   - name: golang
-     package: name=golang state=latest
+  # Packages
+   - package: name=git state=latest
+   - package: name=fonts-ricty-diminished state=latest     
+   - package: name=tmux state=latest
+   - package: name=tmuxinator state=latest
+   - package: name=rxvt-unicode-256color state=latest
+   - package: name=xmonad state=latest
+   - package: name=xmobar state=latest
+   - package: name=dmenu state=latest
+   ## Zsh
+   - package: name=zsh state=latest
+   - shell: chsh -s /usr/bin/zsh tomo
+   ## Golang
+   - package: name=golang state=latest
+ #  - name: peco
+ #    shell: go get github.com/peco/peco/cmd/peco 
+   ## Python
    - package: name=python-dev state=latest
    - package: name=python-pip state=latest
    - package: name=python3-dev state=latest
    - package: name=python3-setuptools state=latest
-   - name: pip
-     shell: easy_install3 pip
-   - package: name=software-properties-common state=latest
+   - shell: easy_install3 pip
+   ## NVIM
    - package: name=software-properties-common state=latest
    - apt_repository: repo='ppa:neovim-ppa/unstable' state=present
    - apt: update_cache=yes
@@ -50,5 +46,6 @@
      shell: |
              update-alternatives --config editor <<EOF | grep nvim | tail -1 | awk '{print $1}' | update-alternatives --config editor
              EOF
+   ## UIM-SKK
    - package: name=uim state=latest
    - package: name=uim-skk state=latest
