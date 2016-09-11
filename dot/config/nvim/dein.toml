@@ -1,0 +1,41 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]] # Switch context based on the cursor position
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]] # Judge filetype based on the cursor position
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]] # Color scheme
+repo = 'vim-scripts/Wombat'
+hook_add = '''
+  set t_Co=256
+  " colorscheme should be set after source. So, it is executed at VimEnter.
+  " This might provent us from event occuring. Nested solves this situation.
+  au MyAutoCmd VimEnter * nested colorscheme wombat
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
