@@ -1,4 +1,4 @@
-Config { font = "Ricty Diminished:style=Bold"
+Config { font = "xft:Ricty Diminished:size=16:style=Bold"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 100
