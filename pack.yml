@@ -3,8 +3,6 @@
   tasks:
    - name: git 
      package: name=git state=latest
-   - name: vim
-     package: name=vim-gnome state=latest
    - name: ricty deminish
      package: name=fonts-ricty-diminished state=latest     
    - name: tmux
@@ -21,4 +19,35 @@
      package: name=dmenu state=latest
    - name: zsh
      package: name=zsh state=latest
+   - name: golang
+     package: name=golang state=latest
+   - package: name=python-dev state=latest
+   - package: name=python-pip state=latest
+   - package: name=python3-dev state=latest
+   - package: name=python3-setuptools state=latest
+   - name: pip
+     shell: easy_install3 pip
+   - package: name=software-properties-common state=latest
+   - package: name=software-properties-common state=latest
+   - apt_repository: repo='ppa:neovim-ppa/unstable' state=present
+   - apt: update_cache=yes
+   - package: name=neovim state=latest
+   - name: vi-alternative#
+     shell: update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+   - name: vi-alternative
+     shell: | 
+             update-alternatives --config vi <<EOF | grep nvim | tail -1 | awk '{print $1}' | update-alternatives --config vi
+             EOF
+   - name: vim-alternative#
+     shell: update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+   - name: vim-alternative
+     shell: |
+             update-alternatives --config vim <<EOF | grep nvim | tail -1 | awk '{print $1}' | update-alternatives --config vim
+             EOF
+   - name: editor-alternative#
+     shell: update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+   - name: vi-alternative
+     shell: |
+             update-alternatives --config editor <<EOF | grep nvim | tail -1 | awk '{print $1}' | update-alternatives --config editor
+             EOF
 
