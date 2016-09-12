@@ -13,6 +13,7 @@
    ## Zsh
    - package: name=zsh state=latest
    - shell: chsh -s /usr/bin/zsh tomo
+   - shell: curl -sL zplug.sh/installer | zsh 
    ## Golang
    - package: name=golang state=latest
  #  - name: peco
@@ -49,3 +50,6 @@
    ## UIM-SKK
    - package: name=uim state=latest
    - package: name=uim-skk state=latest
+   ## TaskWarrior
+   - package: name=taskwarrior state=latest
+   - package: name=vit state=latest
