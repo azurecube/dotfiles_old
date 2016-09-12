@@ -13,7 +13,7 @@
    ## Zsh
    - package: name=zsh state=latest
    - shell: chsh -s /usr/bin/zsh tomo
-   - shell: curl -sL zplug.sh/installer | zsh 
+#   - shell: curl -sL zplug.sh/installer | zsh 
    ## Golang
    - package: name=golang state=latest
  #  - name: peco
