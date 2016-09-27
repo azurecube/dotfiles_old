@@ -41,3 +41,5 @@ PROMPT="%n@%{${fg[$hcolor]}%}%m%{${reset_color}%} %{${fg[brown]}%}%~%{${reset_co
 for i in `find ~/.zsh.d/ -type f | grep -E "sh$" | sort`;do source $i;done
 
 export GTAGSLABEL=exuberant-ctags
+if [ $TERM = "rxvt-unicode-256color" ]; then tmux; fi
+
