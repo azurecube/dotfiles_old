@@ -3,6 +3,9 @@ if !&compatible
   set nocompatible
 endif
 
+" python
+let g:python3_host_prog = expand('/usr/bin/python3')
+
 " reset augroup
 augroup MyAutoCmd
   autocmd!
@@ -57,8 +60,9 @@ nmap <space> [unite]
 nnoremap <silent> [unite]f :<C-u>:VimFiler -split -simple -winwidth=35 -no-quit<CR>
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]m :<C-u>Denite file_mru<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]g :<C-u>Denite grep<CR>
 
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 autocmd FileType unite call s:unite_my_settings()
@@ -75,4 +79,9 @@ function! s:unite_my_settings()"{{{
   nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
+
+" easymotion
+nmap s <Plug>(easymotion-s2)
+nmap [unite]j <Plug>(easymotion-j)
+nmap [unite]k <Plug>(easymotion-k)
 
