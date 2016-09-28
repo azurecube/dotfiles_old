@@ -53,3 +53,9 @@
    ## TaskWarrior
    - package: name=taskwarrior state=latest
    - package: name=vit state=latest
+   # Clip
+   - package: name=xclip state=latest
+   # Security
+   - package: name=keepass2 state=latest
+   - package: name=kpcli state=latest
+   - package: name=openconnect state=latest
