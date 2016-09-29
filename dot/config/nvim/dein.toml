@@ -49,3 +49,8 @@ repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
