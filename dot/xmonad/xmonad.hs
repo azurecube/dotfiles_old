@@ -14,6 +14,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.MultiToggle.Instances
 import XMonad.Util.EZConfig
+import XMonad.Util.Paste
 
 
 import System.IO
@@ -35,7 +36,7 @@ myManageHookShift = composeAll
 	, className =? "Emacs" --> viewShift "2"
 	, className =? "URxvt" --> viewShift "1"
   , className =? "KeePass2" --> viewShift "4"
-  , className =? "HipChat" --> viewShift "2"
+  , className =? "google-chrome" --> viewShift "2"
   , className =? "com-sun-javaws-Main" --> viewShift "5"
   , className =? "VirtualBox" --> viewShift "6"
 	]
@@ -51,6 +52,9 @@ windowOperation =
 	, ((modm, xK_comma), windows W.focusUp)
 	, ((modm .|. shiftMask, xK_period), windows W.swapDown)
 	, ((modm .|. shiftMask, xK_comma), windows W.swapUp)
+	, ((modm, xK_v), pasteSelection)
+	, ((controlMask, xK_colon), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+T")
+	, ((modm, xK_b), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+T")
 	, ((modm, xK_w), nextScreen) ]
 
 screenOperation =
@@ -65,13 +69,14 @@ screenOperation =
 	]
 
 applyOperation =
-	[ ((modm, xK_e), runOrRaise "/usr/local/bin/emacs" (className =? "Emacs"))
-	, ((modm, xK_t), runOrRaise "urxvt" (className =? "URxvt"))
+	[ --((modm, xK_e), runOrRaise "/usr/local/bin/emacs" (className =? "Emacs"))
+	 ((modm, xK_t), runOrRaise "urxvt" (className =? "URxvt"))
 	, ((modm, xK_f), runOrRaise "firefox" (className =? "Firefox"))
         , ((modm, xK_x), runOrRaise "/home/tomo/bin/toggle_xmobar.sh" (className =? "xmobar"))
-        , ((modm, xK_v), runOrRaise "evince" (className =? "Evince"))
+        , ((modm, xK_e), runOrRaise "evince" (className =? "Evince"))
         , ((modm, xK_k), runOrRaise "keepass2" (className =? "KeePass2"))
-        , ((modm, xK_c), runOrRaise "hipchat4" (className =? "HipChat"))
+        --, ((modm, xK_c), runOrRaise "hipchat4" (className =? "HipChat"))
+        , ((modm, xK_c), runOrRaise "google-chrome" (className =? "google-chrome"))
       	]
 
 main = do
