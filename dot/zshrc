@@ -39,7 +39,17 @@ PROMPT="%n@%{${fg[$hcolor]}%}%m%{${reset_color}%} %{${fg[brown]}%}%~%{${reset_co
 
 # Setup additional settings
 for i in `find ~/.zsh.d/ -type f | grep -E "sh$" | sort`;do source $i;done
+ssh-agentup ~/lib/lab/etc/key/id_dsa 2> /dev/null || echo ssh-add failed.. 
+
 
 export GTAGSLABEL=exuberant-ctags
-if [ $TERM = "rxvt-unicode-256color" ]; then tmux; fi
+if [ $TERM = "rxvt-unicode-256color" ]; then mux mgmt; fi
+source ~/lib/lab/etc/alias
+source ~/lib/lab/etc/project/lab
 
+
+PATH="/home/tomo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/tomo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/tomo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/tomo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/tomo/perl5"; export PERL_MM_OPT;

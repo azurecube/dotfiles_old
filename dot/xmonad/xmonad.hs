@@ -53,8 +53,9 @@ windowOperation =
 	, ((modm .|. shiftMask, xK_period), windows W.swapDown)
 	, ((modm .|. shiftMask, xK_comma), windows W.swapUp)
 	, ((modm, xK_v), pasteSelection)
-	, ((controlMask, xK_colon), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+T")
-	, ((modm, xK_b), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+T")
+	, ((controlMask, xK_colon), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
+	, ((modm, xK_b), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
+	, ((modm, xK_bracketright), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+51")
 	, ((modm, xK_w), nextScreen) ]
 
 screenOperation =

@@ -6,4 +6,5 @@ export EDITOR=/usr/bin/vi
 export ENHANCD_COMMAND=ecd
 export LAB_ROOT=~/lib/lab
 export BROWSER=firefox
-export PATH=$PATH:$GOPATH:~/bin:$LAB_ROOT/bin:$LAB_ROOT/nodes
+export JAVA_HOME=/usr/java/jdk
+export PATH=$PATH:$GOPATH:~/bin:$LAB_ROOT/bin:$LAB_ROOT/nodes:$JAVA_HOME/bin

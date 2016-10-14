@@ -54,3 +54,15 @@ repo = 'Shougo/neosnippet.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'Shougo/junkfile.vim'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'

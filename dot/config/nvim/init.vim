@@ -40,6 +40,9 @@ syntax on
 "" mouse
 set mouse=v
 
+"" Ctrl+C to ESC
+inoremap <C-c> <ESC>
+
 " QuickFix
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
@@ -109,3 +112,6 @@ endif
 
 " Markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Auto Save
+let g:auto_save = 1
