@@ -61,7 +61,7 @@ nnoremap [unite] <Nop>
 nmap <space> [unite]
 "nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> [unite]f :<C-u>:VimFiler -split -simple -winwidth=35 -no-quit<CR>
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]b :<C-u>Denite buffer<CR>
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> [unite]m :<C-u>Denite file_mru<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
@@ -115,3 +115,13 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Auto Save
 let g:auto_save = 1
+
+call denite#custom#var('file_rec', 'command',
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'separator', [])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--nocolor', '--nogroup'])
