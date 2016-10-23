@@ -46,6 +46,7 @@ export GTAGSLABEL=exuberant-ctags
 if [ $TERM = "rxvt-unicode-256color" ]; then mux mgmt; fi
 source ~/lib/lab/etc/alias
 source ~/lib/lab/etc/project/lab
+if [ "$TMUX" != "" ]; then printf '\033]2;%s\033\\' $(tmux list-panes -F"#{session_name}:#{window_name}.#{pane_index} _active_flag_#{pane_active}" | grep _active_flag_1 | cut -d' ' -f1) ; fi
 
 
 PATH="/home/tomo/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -53,3 +54,6 @@ PERL5LIB="/home/tomo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/tomo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/tomo/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/tomo/perl5"; export PERL_MM_OPT;
+
+
+DISABLE_AUTO_TITLE=true
