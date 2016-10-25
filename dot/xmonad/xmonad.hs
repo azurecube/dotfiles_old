@@ -36,7 +36,7 @@ myManageHookShift = composeAll
 	, className =? "Emacs" --> viewShift "2"
 	, className =? "URxvt" --> viewShift "1"
   , className =? "KeePass2" --> viewShift "4"
-  , className =? "google-chrome" --> viewShift "2"
+  , className =? "Google-chrome" --> viewShift "2"
   , className =? "com-sun-javaws-Main" --> viewShift "5"
   , className =? "VirtualBox" --> viewShift "6"
 	]
