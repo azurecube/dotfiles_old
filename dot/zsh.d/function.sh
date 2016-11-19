@@ -10,11 +10,11 @@ function tasknote {
   FOLDER=~/.tasknote
   UUID=$(task information ${1} | awk '($1 ~ /^UUID/){print $2}')
   FILE="${UUID}.txt"
+  new=0
 
   ls ${FOLDER}/${FILE} || new=1
-  ${EDITOR} ${FOLDER}/${FILE}
-
-  if [ "$new" == "1" ]; then
+  if [ $new -eq 1 ]; then
     ls ${FOLDER}/${FILE} && task ${1} append '[n]'
   fi
+  ${EDITOR} ${FOLDER}/${FILE}
 }
