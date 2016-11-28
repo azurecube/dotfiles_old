@@ -44,15 +44,15 @@ myManageHookShift = composeAll
 
 -- Keybinds
 windowOperation =
-	[ ((modm, xK_z), sendMessage (Toggle FULL)),
-	 ((modm, xK_g), sendMessage ToggleGaps)
+	[ ((modm, xK_z), sendMessage (Toggle FULL))
+	, ((modm, xK_g), sendMessage ToggleGaps)
 	, ((modm .|. shiftMask, xK_s), sendMessage MirrorShrink)
 	, ((modm .|. shiftMask, xK_e), sendMessage MirrorExpand)
 	, ((modm, xK_period), windows W.focusDown)
 	, ((modm, xK_comma), windows W.focusUp)
 	, ((modm .|. shiftMask, xK_period), windows W.swapDown)
 	, ((modm .|. shiftMask, xK_comma), windows W.swapUp)
-	, ((modm, xK_v), pasteSelection)
+	, ((modm, xK_v), spawn "xdotool windowfocus; sleep 0.2; xdotool key --clearmodifiers shift+118")
 	, ((controlMask, xK_colon), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
 	, ((modm, xK_b), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
 	, ((modm, xK_bracketright), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+51")
