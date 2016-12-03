@@ -1,4 +1,8 @@
-source ~/.zplug/init.zsh
+ls "$ZPLUG_HOME" > /dev/null 2>&1
+if [ $? != 0 ]; then mkdir -p $ZPLUG_HOME/../; git clone https://github.com/zplug/zplug $ZPLUG_HOME; fi
+
+
+source $ZPLUG_HOME/init.zsh
 
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions'

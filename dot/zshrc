@@ -41,11 +41,12 @@ PROMPT="%n@%{${fg[$hcolor]}%}%m%{${reset_color}%} %{${fg[brown]}%}%~%{${reset_co
 for i in `find ~/.zsh.d/ -type f | grep -E "sh$" | sort`;do source $i;done
 ssh-agentup ~/lib/lab/etc/key/id_dsa 2> /dev/null || echo ssh-add failed.. 
 
-
 export GTAGSLABEL=exuberant-ctags
 if [ $TERM = "rxvt-unicode-256color" ]; then mux mgmt; fi
-source ~/lib/lab/etc/alias
-source ~/lib/lab/etc/project/lab
+if [ -d $LAB_ROOT/etc ]; then
+  source ~/lib/lab/etc/alias
+  source ~/lib/lab/etc/project/lab
+fi
 if [ "$TMUX" != "" ]; then printf '\033]2;%s\033\\' $(tmux list-panes -F"#{session_name}:#{window_name}.#{pane_index} _active_flag_#{pane_active}" | grep _active_flag_1 | cut -d' ' -f1) ; fi
 
 
