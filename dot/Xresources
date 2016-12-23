@@ -35,3 +35,6 @@ URxvt.scrollBar:            false
 ! Color
 URxvt*background: Black
 URxvt*foreground: White
+
+!Emacs
+emacs.useXIM:false 
