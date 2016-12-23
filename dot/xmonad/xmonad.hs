@@ -33,7 +33,7 @@ modm = mod4Mask
 -- Window Location
 myManageHookShift = composeAll
   [ className =? "Firefox" --> viewShift "1"
-	, className =? "Emacs" --> viewShift "2"
+	, className =? "Emacs" --> viewShift "1"
 	, className =? "URxvt" --> viewShift "1"
   , className =? "KeePass2" --> viewShift "4"
   , className =? "Google-chrome" --> viewShift "2"
@@ -52,7 +52,7 @@ windowOperation =
 	, ((modm, xK_comma), windows W.focusUp)
 	, ((modm .|. shiftMask, xK_period), windows W.swapDown)
 	, ((modm .|. shiftMask, xK_comma), windows W.swapUp)
-	, ((modm, xK_v), spawn "xdotool windowfocus; sleep 0.2; xdotool key --clearmodifiers shift+118")
+	, ((modm, xK_v), spawn "xdotool windowfocus; sleep 0.2; xdotool key --clearmodifiers shift+118; xdotool keyup 133")
 	, ((controlMask, xK_colon), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
 	, ((modm, xK_b), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+35")
 	, ((modm, xK_bracketright), spawn "xdotool key Super_L+t;sleep 0.1;xdotool key ctrl+t ctrl+51")
@@ -74,7 +74,7 @@ applyOperation =
 	 ((modm, xK_t), runOrRaise "urxvt" (className =? "URxvt"))
 	, ((modm, xK_f), runOrRaise "firefox" (className =? "Firefox"))
         , ((modm, xK_x), runOrRaise "/home/tomo/bin/toggle_xmobar.sh" (className =? "xmobar"))
-        , ((modm, xK_e), runOrRaise "evince" (className =? "Evince"))
+        , ((modm, xK_e), runOrRaise "emacs" (className =? "Emacs"))
         , ((modm, xK_k), runOrRaise "keepass2" (className =? "KeePass2"))
         --, ((modm, xK_c), runOrRaise "hipchat4" (className =? "HipChat"))
         , ((modm, xK_c), runOrRaise "google-chrome" (className =? "google-chrome"))
