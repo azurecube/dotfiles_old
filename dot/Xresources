@@ -23,10 +23,10 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font: xft:Ricty Diminished-Regular:size=16:antialias=true
+URxvt*font: xft:Ricty Diminished:size=16:antialias=true
 
 ! Fix font space
-!URxvt*letterSpace: -1
+URxvt*letterSpace: -9
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
