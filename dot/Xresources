@@ -22,6 +22,7 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fonts
+URxvt*imLocale: en_US.UTF-8
 URxvt.allow_bold:           true
 URxvt*font: xft:Ricty Diminished:size=16:antialias=true
 
