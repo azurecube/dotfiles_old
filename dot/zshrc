@@ -19,6 +19,7 @@ colors
 hcolor="red"
 case `hostname -s` in 
   "agedpale"	) hcolor="cyan" ;;
+  "arch"	) hcolor="cyan" ;;
   "anis"        ) hcolor="green" ;;
   "artemisia"   ) hcolor="green";;
   "azurecube"   ) hcolor="cyan" ;;
@@ -42,6 +43,7 @@ for i in `find ~/.zsh.d/ -type f | grep -E "sh$" | sort`;do source $i;done
 ssh-agentup ~/lib/lab/etc/key/id_dsa 2> /dev/null || echo ssh-add failed.. 
 
 export GTAGSLABEL=exuberant-ctags
+if [ $TERM = "screen-256color" ]; then export TERM="xterm-256color"; fi
 if [ $TERM = "rxvt-unicode-256color" ]; then mux mgmt; fi
 if [ -d $LAB_ROOT/etc ]; then
   source ~/lib/lab/etc/alias
